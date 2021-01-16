@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CV Nicolas Benning</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 20px 20px;
+            font-size: 12px;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Consolas', Courier, monospace;
+            color: royalblue;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+        }
+
+        header #name {
+            flex: auto;
+        }
+
+        header #name h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        header #name #subtitle {
+            font-size: 22px;
+        }
+
+        header #photo {
+            height: 100px;
+        }
+
+        header #contact {
+            padding: 4px 12px;
+            margin-left: 12px;
+            border-left: solid 3px royalblue;
+            background-color: aliceblue;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header #contact p {
+            margin: 2px 0;
+        }
+
+        h2 {
+            border-bottom: solid 2px royalblue;
+            margin: 10px 0 2px;
+            font-size: 16px;
+        }
+
+        .experience {
+            display: flex;
+            flex-direction: row;
+            margin-top: 4px;
+        }
+
+        .period {
+            padding-top: 1px;
+            padding-right: 12px;
+            width: 120px;
+            font-weight: bold;
+        }
+
+        .job {
+            flex: 1;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .job-title {
+            color: royalblue;
+        }
+
+        .company {}
+
+        .location {
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .job ul {
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="name">
+            <h1>Nicolas Benning</h1>
+            <span id="subtitle">Fullstack Software Engineer ASP.NET</span>
+        </div>
+        <img id="photo" src="photo_kds.png" />
+        <div id="contact">
+            <p id="birth">Né le 06/09/1991 (29 ans)</p>
+            <p>2 Rue de Campo-Formio, 75013 Paris</p>
+            <p>06 62 33 03 33</p>
+            <p>nicolas.benning@gmail.com</p>
+        </div>
+    </header>
+
+    <section id="experiences">
+        <h2>Expériences professionnelles</h2>
+        <div class="experience">
+            <div class="period">Depuis août 2015</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Software Engineer</span>,
+                    <span class="company">KDS (filiale d'Amex GBT)</span>,
+                    <span class="location">Le Plessis-Robinson (92), puis Issy-les-Moulineaux (92)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Équipe Scrum anglophone composée de développeurs basés en France et en Roumanie</li>
+                        <li>A COMPLETER</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="experience">
+            <div class="period">Février à août 2015</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Stage de fin d'études</span>,
+                    <span class="company">KDS</span>,
+                    <span class="location">Le Plessis-Robinson (92)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Documentation et amélioration d'une <strong>WebAPI ASP.NET</strong> avec
+                            <strong>Swagger</strong></li>
+                        <li>Monitoring applicatif via la stack <strong>ELK</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="period">Juin, juillet 2014</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Stage en développement</span>,
+                    <span class="company">Bouygues Travaux Publics</span>,
+                    <span class="location">Guyancourt (78)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Développement d’un convertisseur de documents Excel/PDF utilisé sur les chantiers
+                            (<strong>VB.NET</strong>)</li>
+                        <li>Evolution d’une application web de stockage de documents (<strong>ASP.NET, HTML/CSS,
+                                JavaScript, SQL Server</strong>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="period">Juillet, août 2013</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Stage en développement</span>,
+                    <span class="company">Bouygues Travaux Publics</span>,
+                    <span class="location">Guyancourt (78)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Développement d'une application de supervision de serveurs (<strong>VB.NET, SQL
+                                Server</strong>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diplomas">
+        <h2>Formation</h2>
+        <div class="experience">
+            <div class="period">juillet, août 2013</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Stage en développement</span>,
+                    <span class="company">Bouygues Travaux Publics</span>,
+                    <span class="location">Guyancourt (78)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Développement d'une application de supervision de serveurs (<strong>VB.NET, SQL
+                                Server</strong>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="period">juillet, août 2013</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Stage en développement</span>,
+                    <span class="company">Bouygues Travaux Publics</span>,
+                    <span class="location">Guyancourt (78)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Développement d'une application de supervision de serveurs (<strong>VB.NET, SQL
+                                Server</strong>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="period">juillet, août 2013</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Stage en développement</span>,
+                    <span class="company">Bouygues Travaux Publics</span>,
+                    <span class="location">Guyancourt (78)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Développement d'une application de supervision de serveurs (<strong>VB.NET, SQL
+                                Server</strong>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competencies">
+        <h2>Compétences</h2>
+    </section>
+
+    <section id="languages">
+        <h2>Langues</h2>
+        <ul>
+            <li>
+                <h3>Anglais</h3>
+                <p>Compétence professionnelle complète</p>
+            </li>
+            <li>
+                <h3>Allemand</h3>
+                <p>Notions</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="hobbies">
+        <h2>Activités et centres d'intérêt</h2>
+    </section>
+</body>
+
+</html>
