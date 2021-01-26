@@ -9,8 +9,8 @@
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
-            margin: 20px 20px;
-            font-size: 12px;
+            margin: 1rem;
+            font-size: 1rem;
         }
 
         h1,
@@ -29,16 +29,17 @@
         }
 
         header #name h1 {
-            font-size: 48px;
+            font-size: 3.5rem;
             margin: 0;
         }
 
         header #name #subtitle {
-            font-size: 22px;
+            font-size: 1.4rem;
         }
 
         header #photo {
-            height: 100px;
+            margin-left: 10px;
+            height: 112px;
         }
 
         header #contact {
@@ -59,19 +60,20 @@
         h2 {
             border-bottom: solid 2px royalblue;
             margin: 10px 0 2px;
-            font-size: 16px;
+            font-size: 1.5rem;
         }
 
-        .experience {
+        .experience,
+        .sub-experience {
             display: flex;
             flex-direction: row;
             margin-top: 4px;
         }
 
-        .period {
+        .experience .period {
             padding-top: 1px;
             padding-right: 12px;
-            width: 120px;
+            width: 100px;
             font-weight: bold;
         }
 
@@ -81,22 +83,72 @@
 
         h3 {
             margin: 0;
-            font-size: 13px;
+            font-size: 1.2rem;
         }
 
         .job-title {
             color: royalblue;
         }
 
-        .company {}
+        .company {
+            font-weight: bold;
+        }
 
         .location {
             font-weight: normal;
             font-style: italic;
         }
 
-        .job ul {
+        ul {
             margin: 0px;
+            padding-inline-start: 20px;
+        }
+
+        .description span.period {
+            font-weight: bold;
+        }
+
+        .sub-experience {
+            margin-left: 20px;
+        }
+
+        .sub-experience .period {
+            margin-top: 1px;
+            margin-right: 12px;
+            width: 220px;
+            text-align: right;
+            font-style: italic;
+        }
+
+        .competencies-list {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .competencies-list h3 {
+            margin-top: 4px;
+        }
+
+        h4 {
+            margin: 0;
+        }
+
+        .competencies-section#tech {
+            margin-right: 24px;
+            flex-shrink: 0;
+        }
+
+        .last-sections {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .last-sections section#languages {
+            margin-right: 24px;
+        }
+
+        .last-sections section#hobbies {
+            flex: 1;
         }
     </style>
 </head>
@@ -105,7 +157,7 @@
     <header>
         <div id="name">
             <h1>Nicolas Benning</h1>
-            <span id="subtitle">Fullstack Software Engineer ASP.NET</span>
+            <span id="subtitle">Fullstack Software Engineer (6 ans d'expérience)</span>
         </div>
         <img id="photo" src="photo_kds.png" />
         <div id="contact">
@@ -124,12 +176,16 @@
                 <h3>
                     <span class="job-title">Software Engineer</span>,
                     <span class="company">KDS (filiale d'Amex GBT)</span>,
-                    <span class="location">Le Plessis-Robinson (92), puis Issy-les-Moulineaux (92)</span>
+                    <span class="location">Issy-les-Moulineaux (92)</span>
                 </h3>
                 <div class="description">
                     <ul>
-                        <li>Équipe Scrum anglophone composée de développeurs basés en France et en Roumanie</li>
-                        <li>A COMPLETER</li>
+                        <li><strong>Équipe Scrum</strong> anglophone composée de développeurs basés en France et en Roumanie (3 développeurs, 1 testeur, 1 Product Owner)</li>
+                        <li><strong>Développeur fullstack</strong> sur l'application <strong>Neo expense</strong> (3 équipes Scrum), application web de gestion de notes de frais (<strong>C#, ASP.NET, JS</strong>)</li>
+                        <li>Développement de nouvelles fonctionnalités, <strong>référent technique et design haut niveau</strong> en relation avec l'équipe Produit pour les équipes Expense</li>
+                        <li>Maintenance applicative, <strong>gestion du bug backlog</strong> en relation avec le Support client, l'équipe Produit et l'équipe QA</li>
+                        <li><strong>Responsable des dépendances externes</strong> des applications back-end et front-end (mises à jour, vérifications de vulnérabilités, validation des nouvelles bibliothèques...)</li>
+                        <li>Monitoring de la plateforme de production (<strong>stack ELK</strong>)</li>
                     </ul>
                 </div>
             </div>
@@ -146,7 +202,8 @@
                 <div class="description">
                     <ul>
                         <li>Documentation et amélioration d'une <strong>WebAPI ASP.NET</strong> avec
-                            <strong>Swagger</strong></li>
+                            <strong>Swagger</strong>
+                        </li>
                         <li>Monitoring applicatif via la stack <strong>ELK</strong></li>
                     </ul>
                 </div>
@@ -191,50 +248,62 @@
     <section id="diplomas">
         <h2>Formation</h2>
         <div class="experience">
-            <div class="period">juillet, août 2013</div>
+            <div class="period">2012 à 2015</div>
             <div class="job">
                 <h3>
-                    <span class="job-title">Stage en développement</span>,
-                    <span class="company">Bouygues Travaux Publics</span>,
-                    <span class="location">Guyancourt (78)</span>
+                    <span class="job-title">Diplôme d'ingénieur</span>,
+                    <span class="company">Télécom SudParis</span>,
+                    <span class="location">Évry (91)</span>
                 </h3>
                 <div class="description">
-                    <ul>
-                        <li>Développement d'une application de supervision de serveurs (<strong>VB.NET, SQL
-                                Server</strong>)</li>
-                    </ul>
+                    Grande école d’ingénieur spécialisée dans l’informatique et les télécommunications
                 </div>
             </div>
         </div>
-        <div class="experience">
-            <div class="period">juillet, août 2013</div>
+        <!-- <div class="sub-experience">
+            <div class="period">Février à juillet 2015</div>
             <div class="job">
-                <h3>
-                    <span class="job-title">Stage en développement</span>,
-                    <span class="company">Bouygues Travaux Publics</span>,
-                    <span class="location">Guyancourt (78)</span>
-                </h3>
-                <div class="description">
-                    <ul>
-                        <li>Développement d'une application de supervision de serveurs (<strong>VB.NET, SQL
-                                Server</strong>)</li>
-                    </ul>
-                </div>
+                <span class="job-title">
+                    Stage de fin d'études</span> à <span class="company">KDS</span>
+                </span>
+            </div>
+        </div> -->
+        <div class="sub-experience">
+            <div class="period">Septembre 2014 à Janvier 2015</div>
+            <div class="job">
+                <span class="job-title">
+                    Échange Érasmus</span> en Irlande au <span class="company">Dublin Institute of Technology</span>
+                <div class="description">Cursus suivi en MSc. in Computing (Advanced Software Development)</div>
+            </div>
+        </div>
+        <div class="sub-experience">
+            <div class="period">2014 à 2015</div>
+            <div class="job">
+                <span class="job-title">Voie d'appronfondissement :</span>
+                Architecte de Services informatiques Répartis
             </div>
         </div>
         <div class="experience">
-            <div class="period">juillet, août 2013</div>
+            <div class="period">2009 à 2012</div>
             <div class="job">
                 <h3>
-                    <span class="job-title">Stage en développement</span>,
-                    <span class="company">Bouygues Travaux Publics</span>,
-                    <span class="location">Guyancourt (78)</span>
+                    <span class="job-title">Classe préparatoire aux grandes écoles</span>,
+                    <span class="company">Lycée Saint-Louis</span>,
+                    <span class="location">Paris 6<sup>ème</sup></span>
+                </h3>
+                <div class="description">MPSI & MP, option Informatique</div>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="period">2009</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Baccalauréat général</span>,
+                    <span class="company">Lycée Frédéric Mistral</span>,
+                    <span class="location">Fresnes (94)</span>
                 </h3>
                 <div class="description">
-                    <ul>
-                        <li>Développement d'une application de supervision de serveurs (<strong>VB.NET, SQL
-                                Server</strong>)</li>
-                    </ul>
+                    Série S, spécialité Mathématiques, mention <em>Très Bien</em>
                 </div>
             </div>
         </div>
@@ -242,25 +311,66 @@
 
     <section id="competencies">
         <h2>Compétences</h2>
+        <div class="competencies-list">
+            <div class="competencies-section" id="tech">
+                <h3>Technologies et langages</h3>
+                <h4>Back-end</h4>
+                <ul>
+                    <li>C# (version 7), Linq</li>
+                    <li>ASP.NET (4.8) & ASP.NET Core (3.1)</li>
+                </ul>
+                <h4>Front-end</h4>
+                <ul>
+                    <li>HTML5, Handlebars, CSS3, Less</li>
+                    <li>JavaScript, notions ES6, Backbone.js, Underscore, jQuery</li>
+                    <li>npm, Grunt, Node.js</li>
+                </ul>
+                <h4>Autres</h4>
+                <ul>
+                    <li>SQL, PL/SQL (Oracle, MySQL)</li>
+                    <li>Powershell</li>
+                    <li>Notions de Java, VB.NET, PHP, C</li>
+                </ul>
+            </div>
+            <div class="competencies-section methods-tools">
+                <h3>Méthodologies et connaissances</h3>
+                <ul>
+                    <li>Méthodes de développement agiles (Scrum)</li>
+                    <li>Tests unitaires, Test-Driven Development (xUnit.net, Moq)
+                    <li>Revues de code, Pair-programming</li>
+                    <li>Architecture et conception de Bases de Données</li>
+                </ul>
+                <h3>Outils et logiciels</h3>
+                <ul>
+                    <li><strong>Gestionnaires de versions :</strong> Git (Gitlab, Github, GUI GitKraken), SVN</li>
+                    <li><strong>Environnement de développement :</strong> Visual Studio 2019, Resharper, Rider, Visual
+                        Studio Code</li>
+                    <li><strong>Gestion de projet :</strong> Jira, Redmine, Mantis</li>
+                    <li><strong>Gestion de build et intégration continue :</strong> TeamCity</li>
+                </ul>
+            </div>
+        </div>
+        </div>
     </section>
 
-    <section id="languages">
-        <h2>Langues</h2>
-        <ul>
-            <li>
-                <h3>Anglais</h3>
-                <p>Compétence professionnelle complète</p>
-            </li>
-            <li>
-                <h3>Allemand</h3>
-                <p>Notions</p>
-            </li>
-        </ul>
-    </section>
+    <div class="last-sections">
+        <section id="languages">
+            <h2>Langues</h2>
+            <ul>
+                <li><strong>Anglais :</strong> Compétence professionnelle complète</li>
+                <li><strong>Allemand :</strong> Notions</li>
+            </ul>
+        </section>
 
-    <section id="hobbies">
-        <h2>Activités et centres d'intérêt</h2>
-    </section>
+        <section id="hobbies">
+            <h2>Activités et centres d'intérêt</h2>
+            <ul>
+                <li>Voyages, concerts, spectacles</li>
+                <li>Mixologie</li>
+                <li>Plongée sous-marine (Niveau 2 FFESSM)</li>
+                <li>Possesseur du permis B et d’un véhicule personnel</li>
+            </ul>
+        </section>
+    </div>
 </body>
-
 </html>
