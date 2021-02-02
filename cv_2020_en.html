@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Nicolas Benning's Resume</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 1rem;
+            font-size: 1rem;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Consolas', Courier, monospace;
+            color: royalblue;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+        }
+
+        header #name {
+            flex: auto;
+        }
+
+        header #name h1 {
+            font-size: 3.5rem;
+            margin: 0;
+        }
+
+        header #name #subtitle {
+            font-size: 1.4rem;
+        }
+
+        header #photo {
+            margin-left: 10px;
+            height: 112px;
+        }
+
+        header #contact {
+            padding: 4px 12px;
+            margin-left: 12px;
+            border-left: solid 3px royalblue;
+            background-color: aliceblue;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header #contact p {
+            margin: 2px 0;
+        }
+
+        h2 {
+            border-bottom: solid 2px royalblue;
+            margin: 10px 0 2px;
+            font-size: 1.5rem;
+        }
+
+        .experience,
+        .sub-experience {
+            display: flex;
+            flex-direction: row;
+            margin-top: 4px;
+        }
+
+        .experience .period {
+            padding-top: 3px;
+            padding-right: 12px;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        .job {
+            flex: 1;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .job-title {
+            color: royalblue;
+        }
+
+        .company {
+            font-weight: bold;
+        }
+
+        .location {
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        ul {
+            margin: 0px;
+            padding-inline-start: 20px;
+        }
+
+        .description span.period {
+            font-weight: bold;
+        }
+
+        .sub-experience {
+            margin-left: 20px;
+        }
+
+        .sub-experience .period {
+            margin-right: 12px;
+            width: 240px;
+            text-align: right;
+            font-style: italic;
+        }
+
+        .competencies-list {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .competencies-list h3 {
+            margin-top: 4px;
+        }
+
+        h4 {
+            margin: 0;
+        }
+
+        .competencies-section#tech {
+            margin-right: 24px;
+            flex-shrink: 0;
+        }
+
+        .last-sections {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .last-sections section#languages {
+            margin-right: 24px;
+        }
+
+        .last-sections section#hobbies {
+            flex: 1;
+        }
+
+        sup {
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="name">
+            <h1>Nicolas Benning</h1>
+            <span id="subtitle">Fullstack Software Engineer (6 years of experience)</span>
+        </div>
+        <img id="photo" src="photo_kds.png" />
+        <div id="contact">
+            <p id="birth">Born on 09/06/1991 (29 years old)</p>
+            <p>2 Rue de Campo-Formio, 75013 Paris</p>
+            <p>(+33)6 62 33 03 33</p>
+            <p>nicolas.benning@gmail.com</p>
+        </div>
+    </header>
+
+    <section id="experiences">
+        <h2>Employment history</h2>
+        <div class="experience">
+            <div class="period">Since August 2015</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Software Engineer</span>,
+                    <span class="company">KDS (Amex GBT group)</span>,
+                    <span class="location">Issy-les-Moulineaux (92)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>English-speaking <strong>Scrum team</strong> of 3 developpers (2 in France, 1 in Romania), 1
+                            tester and 1 Product Owner</li>
+                        <li><strong>Fullstack Developper</strong> on the <strong>Neo expense</strong> application (3
+                            Scrum teams), an expense management web tool (<strong>C#, ASP.NET Core,
+                                Backbone.js</strong>)</li>
+                        <li>New features development, <strong>technical lead</strong>
+                            for different Scrum teams in collaboration with Product Owners</li>
+                        <li>Application maintenance, <strong>bug backlog management</strong> in collaboration with
+                            Customer Support, Product and QA departments</li>
+                        <li><strong>External dependencies supervisor</strong> for back-end and front-end applications
+                            (updates, vulnerability checks, new libraries validation...)</li>
+                        <li>Production platform monitoring (<strong>ELK stack</strong>)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="experience">
+            <div class="period">Febrary to August 2015</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Final year internship</span>,
+                    <span class="company">KDS</span>,
+                    <span class="location">Le Plessis-Robinson (92)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Documentation and improvements for a <strong>WebAPI ASP.NET</strong> application with
+                            <strong>Swagger</strong>
+                        </li>
+                        <li>Application monitoring set up with the <strong>ELK stack</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="period">June, July 2014</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Development intership</span>,
+                    <span class="company">Bouygues Travaux Publics</span>,
+                    <span class="location">Guyancourt (78)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Development of an Excel/PDF document converter used on construction sites
+                            (<strong>VB.NET</strong>)</li>
+                        <li>Improvements on a document storage web application (<strong>ASP.NET, HTML/CSS,
+                                JavaScript, SQL Server</strong>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="period">July, August 2013</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Development intership</span>,
+                    <span class="company">Bouygues Travaux Publics</span>,
+                    <span class="location">Guyancourt (78)</span>
+                </h3>
+                <div class="description">
+                    <ul>
+                        <li>Development of a servers monitoring application (<strong>VB.NET, SQL
+                                Server</strong>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diplomas">
+        <h2>Education</h2>
+        <div class="experience">
+            <div class="period">2012 to 2015</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Engineer's degree</span>,
+                    <span class="company">Télécom SudParis</span>,
+                    <span class="location">Évry (91)</span>
+                </h3>
+                <div class="description">
+                    Engineering school specialized in IT and telecommunications
+                </div>
+            </div>
+        </div>
+        <div class="sub-experience">
+            <div class="period">September 2014 to January 2015</div>
+            <div class="job">
+                <span class="job-title">
+                    Erasmus exchange</span> in Ireland at the <span class="company">Dublin Institute of
+                    Technology</span>
+                <div class="description">Course followed in MSc. in Computing (Advanced Software Development)</div>
+            </div>
+        </div>
+        <div class="sub-experience">
+            <div class="period">2014 to 2015</div>
+            <div class="job">
+                <span class="job-title">Specialization course:</span>
+                Distributed IT services architecture
+            </div>
+        </div>
+        <div class="experience">
+            <div class="period">2009 to 2012</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Preparatory classes for the "Grandes Écoles"</span>,
+                    <span class="company">Lycée Saint-Louis</span>,
+                    <span class="location">Paris 6<sup>th</sup> district</span>
+                </h3>
+                <div class="description">Three-year undergraduate intensive course in mathematics, physics and
+                    theoretical computer science</div>
+            </div>
+        </div>
+        <div class="experience">
+            <div class="period">2009</div>
+            <div class="job">
+                <h3>
+                    <span class="job-title">Baccalauréat Scientifique</span>,
+                    <span class="company">Frédéric Mistral High School</span>,
+                    <span class="location">Fresnes (94)</span>
+                </h3>
+                <div class="description">
+                    High School diploma, scientific option, major in mathematics, with highest honour
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competencies">
+        <h2>Skills</h2>
+        <div class="competencies-list">
+            <div class="competencies-section" id="tech">
+                <h3>Languages and technologies</h3>
+                <h4>Back-end</h4>
+                <ul>
+                    <li>C# (7), Linq</li>
+                    <li>ASP.NET (4.8) & ASP.NET Core (3.1)</li>
+                </ul>
+                <h4>Front-end</h4>
+                <ul>
+                    <li>HTML5, Handlebars, CSS3, Less</li>
+                    <li>JavaScript (ES5), Backbone.js, Underscore, jQuery</li>
+                    <li>npm, Grunt, Node.js</li>
+                </ul>
+                <h4>Misc</h4>
+                <ul>
+                    <li>SQL, PL/SQL (Oracle, MySQL)</li>
+                    <li>Powershell</li>
+                    <li>Basic knowledge in Java, VB.NET, PHP, C</li>
+                </ul>
+            </div>
+            <div class="competencies-section methods-tools">
+                <h3>Methodologies and knowledge</h3>
+                <ul>
+                    <li>Agile development methods (Scrum)</li>
+                    <li>Unit tests, Test-Driven Development (xUnit.net, Moq)</li>
+                    <li>Code Review, Pair-programming</li>
+                    <li>Database architecture and design</li>
+                </ul>
+                <h3>Software and tools</h3>
+                <ul>
+                    <li><strong>Version control:</strong> Git (Gitlab, Github, GUI GitKraken), SVN</li>
+                    <li><strong>Integrated development environment:</strong> Visual Studio 2019, Resharper, Rider,
+                        Visual
+                        Studio Code</li>
+                    <li><strong>Project management:</strong> Jira, Redmine, Mantis</li>
+                    <li><strong>Build management and continuous integration:</strong> TeamCity</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="last-sections">
+        <section id="languages">
+            <h2>Languages</h2>
+            <ul>
+                <li><strong>English:</strong> Fluent, professional proficiency</li>
+                <li><strong>German:</strong> Basic knowledge</li>
+            </ul>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies and interests</h2>
+            <ul>
+                <li>Travel, concerts, shows</li>
+                <li>Mixology</li>
+                <li>Scuba diving (FFESSM level 2)</li>
+                <li>Driver's license and car owner</li>
+            </ul>
+        </section>
+    </div>
+</body>
+
+</html>
