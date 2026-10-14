@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicolas Benning — Fullstack Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+      --bg: #f8fafc;
+      --bg-card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --badge-bg: #f1f5f9;
+      --badge-text: #334155;
+      --badge-hover: #e2e8f0;
+      --highlight-border: #3b82f6;
+      --highlight-bg: #eff6ff;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    }
+
+    html.dark {
+      --bg: #0b0f19;
+      --bg-card: #131b2e;
+      --border: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-hover: #60a5fa;
+      --primary-light: #172554;
+      --badge-bg: #1e293b;
+      --badge-text: #cbd5e1;
+      --badge-hover: #334155;
+      --highlight-border: #60a5fa;
+      --highlight-bg: #1e293b;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Showcase Bar */
+    .showcase-bar {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .showcase-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .showcase-pill {
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .showcase-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .showcase-btn {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .showcase-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .showcase-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toggle-pill-group {
+      display: inline-flex;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .toggle-pill-btn {
+      border: none;
+      background: transparent;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .toggle-pill-btn.active {
+      background: var(--bg-card);
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .icon-btn {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 15px;
+      transition: all 0.15s;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--primary);
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 32px auto;
+      padding: 0 20px;
+    }
+
+    .resume-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Header Profile */
+    header.profile {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .avatar {
+      width: 104px;
+      height: 104px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .profile-info {
+      flex: 1;
+    }
+
+    .profile-info h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .profile-info .title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+
+    .profile-info .summary {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 14px;
+      font-size: 13.5px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .chip:hover {
+      color: var(--primary);
+    }
+
+    /* Sections */
+    section {
+      margin-top: 32px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Timeline Experiences */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 26px;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 22px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--primary);
+    }
+
+    .timeline-item.highlighted {
+      background: var(--highlight-bg);
+      border-color: var(--highlight-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .role-company {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .role-company .company {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .period {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .job-summary {
+      font-size: 13.5px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .job-bullets {
+      margin-top: 8px;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .job-bullets li {
+      margin-bottom: 6px;
+    }
+
+    /* Education Grid */
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .edu-card {
+      padding: 14px 18px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .edu-main {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .edu-sub {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 18px;
+    }
+
+    .skill-category {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .skill-cat-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-badge {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border: 1px solid transparent;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+
+    .skill-badge:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--badge-hover);
+    }
+
+    .skill-badge.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary-light);
+    }
+
+    /* Two-column Footer: Languages & Interests */
+    .extra-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .extra-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .extra-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .extra-card ul {
+      list-style-type: disc;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .extra-card li {
+      margin-bottom: 5px;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10.5pt;
+        line-height: 1.4;
+      }
+
+      .showcase-bar {
+        display: none !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .resume-card {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+
+      header.profile {
+        border-bottom: 2px solid #2563eb !important;
+        padding-bottom: 14pt;
+      }
+
+      .avatar {
+        width: 80px;
+        height: 80px;
+      }
+
+      .profile-info h1 {
+        font-size: 22pt;
+      }
+
+      .profile-info .title {
+        font-size: 13pt;
+        color: #2563eb !important;
+      }
+
+      .section-title {
+        color: #2563eb !important;
+        margin-top: 14pt;
+        margin-bottom: 8pt;
+        font-size: 12pt;
+      }
+
+      .timeline-item {
+        padding: 4pt 0 !important;
+        margin-bottom: 10pt !important;
+        break-inside: avoid;
+      }
+
+      .timeline-item::before,
+      .timeline::before {
+        display: none !important;
+      }
+
+      .timeline {
+        padding-left: 0 !important;
+      }
+
+      .skill-category,
+      .extra-card,
+      .edu-card {
+        background: transparent !important;
+        border: 1px solid #e2e8f0 !important;
+        break-inside: avoid;
+      }
+
+      .skill-badge {
+        background: #f1f5f9 !important;
+        color: #0f172a !important;
+        border: 1px solid #cbd5e1 !important;
+      }
+
+      a {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .resume-card {
+        padding: 24px 18px;
+      }
+
+      header.profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .contact-chips {
+        justify-content: center;
+      }
+
+      .skills-grid,
+      .extra-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Showcase Navigation Bar -->
+  <aside class="showcase-bar">
+    <div class="showcase-left">
+      <span class="showcase-pill">Resume Showcase</span>
+      <div class="showcase-links">
+        <a href="dist/typst/resume-fr.pdf" target="_blank" class="showcase-btn" title="Télécharger le PDF Typst">
+          <span>📄</span> Typst PDF (FR)
+        </a>
+        <a href="dist/typst/resume-en.pdf" target="_blank" class="showcase-btn" title="Download Typst PDF">
+          <span>📄</span> Typst PDF (EN)
+        </a>
+        <a href="dist/jsonresume/even-fr.html" target="_blank" class="showcase-btn" title="JSON Resume - Even Theme">
+          <span>📜</span> JSON Resume Even
+        </a>
+        <a href="dist/jsonresume/elegant-fr.html" target="_blank" class="showcase-btn" title="JSON Resume - Elegant Theme">
+          <span>📜</span> Elegant
+        </a>
+        <a href="dist/jsonresume/stackoverflow-fr.html" target="_blank" class="showcase-btn" title="JSON Resume - StackOverflow Theme">
+          <span>📜</span> StackOverflow
+        </a>
+      </div>
+    </div>
+
+    <div class="showcase-right">
+      <!-- Language Pill Switcher -->
+      <div class="toggle-pill-group">
+        <button id="btn-fr" class="toggle-pill-btn active" onclick="setLanguage('fr')">FR</button>
+        <button id="btn-en" class="toggle-pill-btn" onclick="setLanguage('en')">EN</button>
+      </div>
+
+      <!-- Print Button -->
+      <button class="icon-btn" onclick="window.print()" title="Imprimer ou enregistrer en PDF (Ctrl+P)">
+        🖨️
+      </button>
+
+      <!-- Theme Switcher -->
+      <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()" title="Basculer le mode Sombre / Clair">
+        🌙
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Resume Content Container -->
+  <main class="container">
+    <article class="resume-card" id="resume-container">
+      <!-- Rendered dynamically from data/resume.{lang}.json -->
+    </article>
+  </main>
+
+  <!-- Embedded Structured Datasets (Zero CORS / Offline Ready) -->
+  <script id="data-fr" type="application/json">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Nicolas Benning",
+    "label": "Fullstack Software Engineer",
+    "image": "photo_kds.png",
+    "email": "nicolas.benning@gmail.com",
+    "phone": "+33 6 62 33 03 33",
+    "url": "https://github.com/Bicolt",
+    "summary": "Ingénieur logiciel Fullstack passionné, expérimenté en conception et développement d'applications web d'entreprise robustes, architectures distribuées, APIs performantes et écosystème .NET / TypeScript.",
+    "location": {
+      "address": "55B Rue de Lyon",
+      "postalCode": "75012",
+      "city": "Paris",
+      "countryCode": "FR",
+      "region": "Île-de-France"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "Bicolt",
+        "url": "https://github.com/Bicolt"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Sinequa",
+      "position": "Software Engineer",
+      "url": "https://www.sinequa.com",
+      "startDate": "2021-06",
+      "endDate": null,
+      "summary": "Développement et maintenance sur la plateforme Sinequa Enterprise Search (moteur de recherche IA interne pour les grandes entreprises).",
+      "highlights": [
+        "Développement de nouvelles fonctionnalités et maintenance sur le produit Sinequa Enterprise Search",
+        "Développeur fullstack (C#, .NET 5, TypeScript) au sein de l'équipe 'Plateforme' sur des problématiques transverses (APIs externes, interface d'administration, visualisation de logs...)"
+      ]
+    },
+    {
+      "name": "KDS (filiale d'American Express Global Business Travel)",
+      "position": "Software Engineer",
+      "url": "https://www.amexglobalbusinesstravel.com",
+      "startDate": "2015-08",
+      "endDate": "2021-05",
+      "summary": "Développement fullstack sur l'application SaaS d'entreprise Neo Expense de gestion de notes de frais.",
+      "highlights": [
+        "Membre d'une équipe Scrum anglophone internationale (France, Roumanie) composée de développeurs, testeur et Product Owner",
+        "Développeur fullstack sur l'application Neo Expense (3 équipes Scrum) en C#, ASP.NET Core et Backbone.js",
+        "Référent technique et design haut niveau en relation avec l'équipe Produit pour les équipes Expense",
+        "Maintenance applicative et gestion du bug backlog en relation étroite avec le Support client, le Produit et la QA",
+        "Responsable des dépendances externes des applications back-end et front-end (mises à jour, sécurité, conformité des vulnérabilités, validation des nouvelles librairies)",
+        "Monitoring et observabilité de la plateforme de production avec la stack ELK (Elasticsearch, Logstash, Kibana)"
+      ]
+    },
+    {
+      "name": "KDS",
+      "position": "Stagiaire Software Engineer - Fin d'études",
+      "startDate": "2015-02",
+      "endDate": "2015-08",
+      "summary": "Stage de fin d'études d'ingénieur.",
+      "highlights": [
+        "Documentation et amélioration d'une application WebAPI ASP.NET avec Swagger",
+        "Mise en place du monitoring de l'application avec la stack ELK"
+      ]
+    },
+    {
+      "name": "Bouygues Travaux Publics",
+      "position": "Stagiaire Développeur",
+      "startDate": "2014-06",
+      "endDate": "2014-07",
+      "summary": "Stage technique d'ingénieur.",
+      "highlights": [
+        "Développement d'un convertisseur de documents Excel/PDF utilisé sur les chantiers en VB.NET",
+        "Évolution d'une application web de stockage de documents (ASP.NET, HTML/CSS, JavaScript, SQL Server)"
+      ]
+    },
+    {
+      "name": "Bouygues Travaux Publics",
+      "position": "Stagiaire Développeur",
+      "startDate": "2013-07",
+      "endDate": "2013-08",
+      "summary": "Premier stage technique de développement.",
+      "highlights": [
+        "Développement d'une application de supervision de serveurs (VB.NET, SQL Server)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Télécom SudParis",
+      "url": "https://www.telecom-sudparis.eu",
+      "area": "Informatique et Télécommunications",
+      "studyType": "Diplôme d'ingénieur",
+      "startDate": "2012",
+      "endDate": "2015",
+      "score": null,
+      "courses": [
+        "Voie d'approfondissement : Architecte de Services informatiques Répartis"
+      ]
+    },
+    {
+      "institution": "Dublin Institute of Technology (DIT)",
+      "url": "",
+      "area": "Advanced Software Development",
+      "studyType": "Échange Érasmus - MSc in Computing",
+      "startDate": "2014-09",
+      "endDate": "2015-01",
+      "courses": []
+    },
+    {
+      "institution": "Lycée Saint-Louis, Paris",
+      "url": "",
+      "area": "MPSI & MP, option Informatique",
+      "studyType": "Classes Préparatoires aux Grandes Écoles (CPGE)",
+      "startDate": "2009",
+      "endDate": "2012",
+      "courses": []
+    },
+    {
+      "institution": "Lycée Frédéric Mistral, Fresnes",
+      "url": "",
+      "area": "Série S, spécialité Mathématiques",
+      "studyType": "Baccalauréat général",
+      "startDate": "2009",
+      "endDate": "2009",
+      "score": "Mention Très Bien",
+      "courses": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Back-end & Architecture",
+      "level": "Expert",
+      "keywords": [
+        "C#",
+        ".NET Core / .NET 5+",
+        "ASP.NET Core",
+        "LINQ",
+        "REST APIs",
+        "Architecture distribuée",
+        "SQL Server",
+        "MySQL",
+        "Oracle PL/SQL"
+      ]
+    },
+    {
+      "name": "Front-end & Web",
+      "level": "Avancé",
+      "keywords": [
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "HTML5 / CSS3",
+        "Less / Sass",
+        "Node.js",
+        "npm",
+        "Backbone.js",
+        "jQuery"
+      ]
+    },
+    {
+      "name": "Méthodologies & Qualité",
+      "level": "Avancé",
+      "keywords": [
+        "Agile / Scrum",
+        "TDD & Tests Unitaires (xUnit, Moq)",
+        "Code Reviews",
+        "Pair Programming",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Outils & Observabilité",
+      "level": "Avancé",
+      "keywords": [
+        "Git (GitHub, GitLab, GitKraken)",
+        "ELK Stack (Elasticsearch, Logstash, Kibana)",
+        "Visual Studio / Rider / VS Code",
+        "Jira",
+        "PowerShell",
+        "TeamCity"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Français",
+      "fluency": "Langue maternelle"
+    },
+    {
+      "language": "Anglais",
+      "fluency": "Courant / Compétence professionnelle complète (C2)"
+    },
+    {
+      "language": "Allemand",
+      "fluency": "Notions"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Mixologie",
+      "keywords": ["Création de cocktails", "Dégustation"]
+    },
+    {
+      "name": "Plongée sous-marine",
+      "keywords": ["Niveau 2 FFESSM"]
+    },
+    {
+      "name": "Voyages & Culture",
+      "keywords": ["Concerts", "Spectacles", "Découverte internationale"]
+    }
+  ]
+}
+
+  </script>
+  <script id="data-en" type="application/json">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Nicolas Benning",
+    "label": "Fullstack Software Engineer",
+    "image": "photo_kds.png",
+    "email": "nicolas.benning@gmail.com",
+    "phone": "+33 6 62 33 03 33",
+    "url": "https://github.com/Bicolt",
+    "summary": "Passionate Fullstack Software Engineer with extensive experience building robust enterprise web applications, distributed architectures, high-performance APIs, and modern .NET / TypeScript platforms.",
+    "location": {
+      "address": "55B Rue de Lyon",
+      "postalCode": "75012",
+      "city": "Paris",
+      "countryCode": "FR",
+      "region": "Île-de-France"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "Bicolt",
+        "url": "https://github.com/Bicolt"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Sinequa",
+      "position": "Software Engineer",
+      "url": "https://www.sinequa.com",
+      "startDate": "2021-06",
+      "endDate": null,
+      "summary": "Engineering and maintenance for the Sinequa Enterprise Search platform (AI-powered internal enterprise search engine).",
+      "highlights": [
+        "New feature development and platform maintenance on the Sinequa Enterprise Search product",
+        "Fullstack Software Engineer (C#, .NET 5, TypeScript) within the 'Platform' core team handling cross-functional systems (external APIs, admin interface, log visualization)"
+      ]
+    },
+    {
+      "name": "KDS (American Express Global Business Travel group)",
+      "position": "Software Engineer",
+      "url": "https://www.amexglobalbusinesstravel.com",
+      "startDate": "2015-08",
+      "endDate": "2021-05",
+      "summary": "Fullstack development on enterprise SaaS expense management application (Neo Expense).",
+      "highlights": [
+        "Member of an international English-speaking Scrum team (France, Romania) with developers, QA engineer, and Product Owner",
+        "Fullstack developer on the Neo Expense application (3 Scrum teams) using C#, ASP.NET Core, and Backbone.js",
+        "Technical lead and high-level software design point-of-contact in close collaboration with Product Management",
+        "Application maintenance and bug backlog management with Customer Support, Product, and QA teams",
+        "Lead maintainer for third-party frontend and backend dependencies (security upgrades, vulnerability audits, new package approvals)",
+        "Production platform monitoring and observability using the ELK stack (Elasticsearch, Logstash, Kibana)"
+      ]
+    },
+    {
+      "name": "KDS",
+      "position": "Software Engineering Intern",
+      "startDate": "2015-02",
+      "endDate": "2015-08",
+      "summary": "Final-year engineering internship.",
+      "highlights": [
+        "Documentation and enhancement of an ASP.NET WebAPI application with Swagger",
+        "Implementation of application monitoring with the ELK stack"
+      ]
+    },
+    {
+      "name": "Bouygues Travaux Publics",
+      "position": "Software Developer Intern",
+      "startDate": "2014-06",
+      "endDate": "2014-07",
+      "summary": "Engineering development internship.",
+      "highlights": [
+        "Developed an Excel/PDF converter tool used across construction sites (VB.NET)",
+        "Extended an internal document storage web application (ASP.NET, HTML/CSS, JavaScript, SQL Server)"
+      ]
+    },
+    {
+      "name": "Bouygues Travaux Publics",
+      "position": "Software Developer Intern",
+      "startDate": "2013-07",
+      "endDate": "2013-08",
+      "summary": "First technical software internship.",
+      "highlights": [
+        "Developed a server monitoring and supervision application (VB.NET, SQL Server)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Télécom SudParis",
+      "url": "https://www.telecom-sudparis.eu",
+      "area": "Computer Science & Telecommunications",
+      "studyType": "Master of Science in Engineering (Diplôme d'ingénieur)",
+      "startDate": "2012",
+      "endDate": "2015",
+      "score": null,
+      "courses": [
+        "Major: Distributed Systems & Software Services Architecture"
+      ]
+    },
+    {
+      "institution": "Dublin Institute of Technology (DIT)",
+      "url": "",
+      "area": "Advanced Software Development",
+      "studyType": "Erasmus Exchange - MSc in Computing",
+      "startDate": "2014-09",
+      "endDate": "2015-01",
+      "courses": []
+    },
+    {
+      "institution": "Lycée Saint-Louis, Paris",
+      "url": "",
+      "area": "MPSI & MP (Mathematics, Physics, Computer Science)",
+      "studyType": "Classes Préparatoires aux Grandes Écoles (CPGE)",
+      "startDate": "2009",
+      "endDate": "2012",
+      "courses": []
+    },
+    {
+      "institution": "Lycée Frédéric Mistral, Fresnes",
+      "url": "",
+      "area": "Science major, Mathematics track",
+      "studyType": "French Baccalauréat",
+      "startDate": "2009",
+      "endDate": "2009",
+      "score": "With Highest Honors (Mention Très Bien)",
+      "courses": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend & Architecture",
+      "level": "Expert",
+      "keywords": [
+        "C#",
+        ".NET Core / .NET 5+",
+        "ASP.NET Core",
+        "LINQ",
+        "REST APIs",
+        "Distributed Systems",
+        "SQL Server",
+        "MySQL",
+        "Oracle PL/SQL"
+      ]
+    },
+    {
+      "name": "Frontend & Web",
+      "level": "Advanced",
+      "keywords": [
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "HTML5 / CSS3",
+        "Less / Sass",
+        "Node.js",
+        "npm",
+        "Backbone.js",
+        "jQuery"
+      ]
+    },
+    {
+      "name": "Methodologies & Quality",
+      "level": "Advanced",
+      "keywords": [
+        "Agile / Scrum",
+        "TDD & Unit Testing (xUnit, Moq)",
+        "Code Reviews",
+        "Pair Programming",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "DevOps, Tools & Observability",
+      "level": "Advanced",
+      "keywords": [
+        "Git (GitHub, GitLab, GitKraken)",
+        "ELK Stack (Elasticsearch, Logstash, Kibana)",
+        "Visual Studio / Rider / VS Code",
+        "Jira",
+        "PowerShell",
+        "TeamCity"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "French",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Full professional proficiency (C2)"
+    },
+    {
+      "language": "German",
+      "fluency": "Elementary proficiency"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Mixology",
+      "keywords": ["Cocktail crafting", "Flavor design"]
+    },
+    {
+      "name": "Scuba Diving",
+      "keywords": ["CMAS 2-Star / FFESSM Level 2"]
+    },
+    {
+      "name": "Travel & Live Arts",
+      "keywords": ["Concerts", "Theater", "Cultural exploration"]
+    }
+  ]
+}
+
+  </script>
+
+  <script>
+    let currentLang = 'fr';
+    let selectedSkill = null;
+    let resumeData = {
+      fr: JSON.parse(document.getElementById('data-fr').textContent),
+      en: JSON.parse(document.getElementById('data-en').textContent)
+    };
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      selectedSkill = null;
+      renderResume();
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.toggle('dark');
+      document.getElementById('theme-toggle').textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    // Initialize Theme Preference
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      document.getElementById('theme-toggle').textContent = '☀️';
+    }
+
+    function toggleSkill(skill) {
+      if (selectedSkill === skill) {
+        selectedSkill = null;
+      } else {
+        selectedSkill = skill;
+      }
+      renderResume();
+    }
+
+    function renderResume() {
+      const data = resumeData[currentLang];
+      const c = data.basics;
+
+      let html = `
+        <header class="profile">
+          <div class="avatar-wrapper">
+            <img class="avatar" src="${c.image || 'photo_kds.png'}" alt="${c.name}" onerror="this.style.display='none'">
+          </div>
+          <div class="profile-info">
+            <h1>${c.name}</h1>
+            <div class="title">${c.label}</div>
+            <p class="summary">${c.summary || ''}</p>
+            <div class="contact-chips">
+              <a href="mailto:${c.email}" class="chip"><span>✉️</span> ${c.email}</a>
+              <a href="tel:${c.phone.replace(/\\s/g, '')}" class="chip"><span>📞</span> ${c.phone}</a>
+              <span class="chip"><span>📍</span> ${c.location.city}, ${c.location.countryCode}</span>
+              ${c.url ? `<a href="${c.url}" target="_blank" class="chip"><span>🔗</span> ${c.url.replace('https://', '')}</a>` : ''}
+            </div>
+          </div>
+        </header>
+
+        <!-- Experience Section -->
+        <section id="experience">
+          <h2 class="section-title">${currentLang === 'fr' ? 'Expériences Professionnelles' : 'Professional Experience'}</h2>
+          <div class="timeline">
+      `;
+
+      data.work.forEach(job => {
+        const periodStr = `${job.startDate} — ${job.endDate ? job.endDate : (currentLang === 'fr' ? 'Présent' : 'Present')}`;
+        
+        // Check if job matches selected skill filter
+        let isHighlighted = false;
+        if (selectedSkill) {
+          const lowerSkill = selectedSkill.toLowerCase();
+          const jobText = (job.summary + ' ' + (job.highlights || []).join(' ') + ' ' + job.position).toLowerCase();
+          if (jobText.includes(lowerSkill)) {
+            isHighlighted = true;
+          }
+        }
+
+        html += `
+          <div class="timeline-item ${isHighlighted ? 'highlighted' : ''}">
+            <div class="timeline-header">
+              <div class="role-company">
+                ${job.position} <span style="font-weight: normal; color: var(--text-muted)">•</span> 
+                <span class="company">${job.name}</span>
+              </div>
+              <div class="period">${periodStr}</div>
+            </div>
+            ${job.summary ? `<div class="job-summary">${job.summary}</div>` : ''}
+            ${job.highlights && job.highlights.length ? `
+              <ul class="job-bullets">
+                ${job.highlights.map(h => `<li>${h}</li>`).join('')}
+              </ul>
+            ` : ''}
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+          <h2 class="section-title">${currentLang === 'fr' ? 'Formation' : 'Education'}</h2>
+          <div class="education-grid">
+      `;
+
+      data.education.forEach(edu => {
+        const dateStr = edu.startDate === edu.endDate || !edu.endDate ? edu.startDate : `${edu.startDate} — ${edu.endDate}`;
+        html += `
+          <div class="edu-card">
+            <div>
+              <div class="edu-main">${edu.studyType} — <span style="color: var(--primary); font-weight: 600;">${edu.institution}</span></div>
+              <div class="edu-sub">${edu.area || ''} ${edu.score ? `• <em>${edu.score}</em>` : ''}</div>
+              ${edu.courses && edu.courses.length ? `<div class="edu-sub" style="font-style: italic;">${edu.courses.join(' • ')}</div>` : ''}
+            </div>
+            <div class="period">${dateStr}</div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+        </section>
+
+        <!-- Skills Section with Interactive Tags -->
+        <section id="skills">
+          <h2 class="section-title">${currentLang === 'fr' ? 'Compétences Techniques (cliquez pour filtrer)' : 'Technical Skills (click to filter)'}</h2>
+          <div class="skills-grid">
+      `;
+
+      data.skills.forEach(cat => {
+        html += `
+          <div class="skill-category">
+            <div class="skill-cat-title">${cat.name}</div>
+            <div class="skill-badges">
+              ${cat.keywords.map(kw => `
+                <button class="skill-badge ${selectedSkill === kw ? 'active' : ''}" onclick="toggleSkill('${kw}')">
+                  ${kw}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+        </section>
+
+        <!-- Languages & Interests Grid -->
+        <section id="extra">
+          <div class="extra-grid">
+            <div class="extra-card">
+              <h3>${currentLang === 'fr' ? 'Langues' : 'Languages'}</h3>
+              <ul>
+                ${data.languages.map(l => `<li><strong>${l.language} :</strong> ${l.fluency}</li>`).join('')}
+              </ul>
+            </div>
+            <div class="extra-card">
+              <h3>${currentLang === 'fr' ? 'Centres d’intérêt' : 'Interests'}</h3>
+              <ul>
+                ${data.interests.map(i => `<li><strong>${i.name}</strong> ${i.keywords && i.keywords.length ? `(${i.keywords.join(', ')})` : ''}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </section>
+      `;
+
+      document.getElementById('resume-container').innerHTML = html;
+    }
+
+    // Initial render
+    renderResume();
+  </script>
+</body>
+</html>

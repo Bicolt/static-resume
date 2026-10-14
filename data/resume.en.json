@@ -1,0 +1,212 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Nicolas Benning",
+    "label": "Fullstack Software Engineer",
+    "image": "photo_kds.png",
+    "email": "nicolas.benning@gmail.com",
+    "phone": "+33 6 62 33 03 33",
+    "url": "https://github.com/Bicolt",
+    "summary": "Passionate Fullstack Software Engineer with extensive experience building robust enterprise web applications, distributed architectures, high-performance APIs, and modern .NET / TypeScript platforms.",
+    "location": {
+      "address": "55B Rue de Lyon",
+      "postalCode": "75012",
+      "city": "Paris",
+      "countryCode": "FR",
+      "region": "Île-de-France"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "Bicolt",
+        "url": "https://github.com/Bicolt"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Sinequa",
+      "position": "Software Engineer",
+      "url": "https://www.sinequa.com",
+      "startDate": "2021-06",
+      "endDate": null,
+      "summary": "Engineering and maintenance for the Sinequa Enterprise Search platform (AI-powered internal enterprise search engine).",
+      "highlights": [
+        "New feature development and platform maintenance on the Sinequa Enterprise Search product",
+        "Fullstack Software Engineer (C#, .NET 5, TypeScript) within the 'Platform' core team handling cross-functional systems (external APIs, admin interface, log visualization)"
+      ]
+    },
+    {
+      "name": "KDS (American Express Global Business Travel group)",
+      "position": "Software Engineer",
+      "url": "https://www.amexglobalbusinesstravel.com",
+      "startDate": "2015-08",
+      "endDate": "2021-05",
+      "summary": "Fullstack development on enterprise SaaS expense management application (Neo Expense).",
+      "highlights": [
+        "Member of an international English-speaking Scrum team (France, Romania) with developers, QA engineer, and Product Owner",
+        "Fullstack developer on the Neo Expense application (3 Scrum teams) using C#, ASP.NET Core, and Backbone.js",
+        "Technical lead and high-level software design point-of-contact in close collaboration with Product Management",
+        "Application maintenance and bug backlog management with Customer Support, Product, and QA teams",
+        "Lead maintainer for third-party frontend and backend dependencies (security upgrades, vulnerability audits, new package approvals)",
+        "Production platform monitoring and observability using the ELK stack (Elasticsearch, Logstash, Kibana)"
+      ]
+    },
+    {
+      "name": "KDS",
+      "position": "Software Engineering Intern",
+      "startDate": "2015-02",
+      "endDate": "2015-08",
+      "summary": "Final-year engineering internship.",
+      "highlights": [
+        "Documentation and enhancement of an ASP.NET WebAPI application with Swagger",
+        "Implementation of application monitoring with the ELK stack"
+      ]
+    },
+    {
+      "name": "Bouygues Travaux Publics",
+      "position": "Software Developer Intern",
+      "startDate": "2014-06",
+      "endDate": "2014-07",
+      "summary": "Engineering development internship.",
+      "highlights": [
+        "Developed an Excel/PDF converter tool used across construction sites (VB.NET)",
+        "Extended an internal document storage web application (ASP.NET, HTML/CSS, JavaScript, SQL Server)"
+      ]
+    },
+    {
+      "name": "Bouygues Travaux Publics",
+      "position": "Software Developer Intern",
+      "startDate": "2013-07",
+      "endDate": "2013-08",
+      "summary": "First technical software internship.",
+      "highlights": [
+        "Developed a server monitoring and supervision application (VB.NET, SQL Server)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Télécom SudParis",
+      "url": "https://www.telecom-sudparis.eu",
+      "area": "Computer Science & Telecommunications",
+      "studyType": "Master of Science in Engineering (Diplôme d'ingénieur)",
+      "startDate": "2012",
+      "endDate": "2015",
+      "score": null,
+      "courses": [
+        "Major: Distributed Systems & Software Services Architecture"
+      ]
+    },
+    {
+      "institution": "Dublin Institute of Technology (DIT)",
+      "url": "",
+      "area": "Advanced Software Development",
+      "studyType": "Erasmus Exchange - MSc in Computing",
+      "startDate": "2014-09",
+      "endDate": "2015-01",
+      "courses": []
+    },
+    {
+      "institution": "Lycée Saint-Louis, Paris",
+      "url": "",
+      "area": "MPSI & MP (Mathematics, Physics, Computer Science)",
+      "studyType": "Classes Préparatoires aux Grandes Écoles (CPGE)",
+      "startDate": "2009",
+      "endDate": "2012",
+      "courses": []
+    },
+    {
+      "institution": "Lycée Frédéric Mistral, Fresnes",
+      "url": "",
+      "area": "Science major, Mathematics track",
+      "studyType": "French Baccalauréat",
+      "startDate": "2009",
+      "endDate": "2009",
+      "score": "With Highest Honors (Mention Très Bien)",
+      "courses": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend & Architecture",
+      "level": "Expert",
+      "keywords": [
+        "C#",
+        ".NET Core / .NET 5+",
+        "ASP.NET Core",
+        "LINQ",
+        "REST APIs",
+        "Distributed Systems",
+        "SQL Server",
+        "MySQL",
+        "Oracle PL/SQL"
+      ]
+    },
+    {
+      "name": "Frontend & Web",
+      "level": "Advanced",
+      "keywords": [
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "HTML5 / CSS3",
+        "Less / Sass",
+        "Node.js",
+        "npm",
+        "Backbone.js",
+        "jQuery"
+      ]
+    },
+    {
+      "name": "Methodologies & Quality",
+      "level": "Advanced",
+      "keywords": [
+        "Agile / Scrum",
+        "TDD & Unit Testing (xUnit, Moq)",
+        "Code Reviews",
+        "Pair Programming",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "DevOps, Tools & Observability",
+      "level": "Advanced",
+      "keywords": [
+        "Git (GitHub, GitLab, GitKraken)",
+        "ELK Stack (Elasticsearch, Logstash, Kibana)",
+        "Visual Studio / Rider / VS Code",
+        "Jira",
+        "PowerShell",
+        "TeamCity"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "French",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Full professional proficiency (C2)"
+    },
+    {
+      "language": "German",
+      "fluency": "Elementary proficiency"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Mixology",
+      "keywords": ["Cocktail crafting", "Flavor design"]
+    },
+    {
+      "name": "Scuba Diving",
+      "keywords": ["CMAS 2-Star / FFESSM Level 2"]
+    },
+    {
+      "name": "Travel & Live Arts",
+      "keywords": ["Concerts", "Theater", "Cultural exploration"]
+    }
+  ]
+}
