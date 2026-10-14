@@ -621,13 +621,13 @@
         <a href="dist/typst/resume-en.pdf" target="_blank" class="showcase-btn" title="Download Typst PDF">
           <span>📄</span> Typst PDF (EN)
         </a>
-        <a href="dist/jsonresume/even-fr.html" target="_blank" class="showcase-btn" title="JSON Resume - Even Theme">
+        <a id="link-theme-even" href="dist/jsonresume/even-fr.html" target="_blank" class="showcase-btn" title="JSON Resume - Even Theme">
           <span>📜</span> JSON Resume Even
         </a>
-        <a href="dist/jsonresume/elegant-fr.html" target="_blank" class="showcase-btn" title="JSON Resume - Elegant Theme">
+        <a id="link-theme-elegant" href="dist/jsonresume/elegant-fr.html" target="_blank" class="showcase-btn" title="JSON Resume - Elegant Theme">
           <span>📜</span> Elegant
         </a>
-        <a href="dist/jsonresume/stackoverflow-fr.html" target="_blank" class="showcase-btn" title="JSON Resume - StackOverflow Theme">
+        <a id="link-theme-stackoverflow" href="dist/jsonresume/stackoverflow-fr.html" target="_blank" class="showcase-btn" title="JSON Resume - StackOverflow Theme">
           <span>📜</span> StackOverflow
         </a>
       </div>
@@ -1104,6 +1104,15 @@
       document.documentElement.lang = lang;
       document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      
+      // Update showcase theme links to match active language
+      const linkEven = document.getElementById('link-theme-even');
+      const linkElegant = document.getElementById('link-theme-elegant');
+      const linkStack = document.getElementById('link-theme-stackoverflow');
+      if (linkEven) linkEven.href = `dist/jsonresume/even-${lang}.html`;
+      if (linkElegant) linkElegant.href = `dist/jsonresume/elegant-${lang}.html`;
+      if (linkStack) linkStack.href = `dist/jsonresume/stackoverflow-${lang}.html`;
+
       selectedSkill = null;
       renderResume();
     }
