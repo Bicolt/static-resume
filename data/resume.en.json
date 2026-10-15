@@ -2,12 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Nicolas Benning",
-    "label": "Fullstack Software Engineer",
+    "label": "R&D Manager / Engineering Manager",
     "image": "photo_kds.png",
     "email": "nicolas.benning@gmail.com",
     "phone": "+33 6 62 33 03 33",
     "url": "https://github.com/Bicolt",
-    "summary": "Passionate Fullstack Software Engineer with extensive experience building robust enterprise web applications, distributed architectures, high-performance APIs, and modern .NET / TypeScript platforms.",
+    "summary": "R&D Manager and Technical Leader with over 10 years of experience in enterprise software engineering, distributed architectures (.NET, AWS Cloud, microservices), and leading multi-team engineering organizations (4 Scrum teams, ~25 developers and team leaders). Passionate about technical modernization, engineering excellence, and product-tech strategic alignment.",
     "location": {
       "address": "55B Rue de Lyon",
       "postalCode": "75012",
@@ -20,20 +20,52 @@
         "network": "GitHub",
         "username": "Bicolt",
         "url": "https://github.com/Bicolt"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "nicolas-benning",
+        "url": "https://www.linkedin.com/in/nicolas-benning"
       }
     ]
   },
   "work": [
     {
+      "name": "Amex GBT Neo",
+      "position": "R&D Manager",
+      "url": "https://www.amexglobalbusinesstravel.com",
+      "startDate": "2023-11",
+      "endDate": null,
+      "summary": "Engineering leadership for 4 Scrum teams (~25 developers and team leaders) building Neo Expense, an enterprise SaaS solution for corporate expense management.",
+      "highlights": [
+        "Direct people management and technical leadership across 4 international Scrum teams (25+ engineers and team leads): team structuring, coaching leaders, and strategic alignment with product vision",
+        "Spearheaded legacy backend modernization migrating to a modern, resilient .NET stack",
+        "Led the comprehensive frontend redesign and overhaul to Vue.js",
+        "Initiated and framed the architectural transition from monolith to microservices",
+        "Actively contributed to the infrastructure migration from on-premise datacenters to AWS cloud"
+      ]
+    },
+    {
+      "name": "Shift Technology",
+      "position": "Senior Software Engineer",
+      "url": "https://www.shift-technology.com",
+      "startDate": "2022-01",
+      "endDate": "2023-11",
+      "summary": "Fullstack development on AI-driven SaaS platforms for claims automation and insurance fraud detection.",
+      "highlights": [
+        "Fullstack feature engineering using C# / .NET and React.js on highly scalable distributed architectures",
+        "Designed high-performance REST APIs and implemented continuous delivery and high software quality standards (xUnit, systematic code reviews)"
+      ]
+    },
+    {
       "name": "Sinequa",
       "position": "Software Engineer",
       "url": "https://www.sinequa.com",
       "startDate": "2021-06",
-      "endDate": null,
-      "summary": "Engineering and maintenance for the Sinequa Enterprise Search platform (AI-powered internal enterprise search engine).",
+      "endDate": "2021-12",
+      "summary": "Development and maintenance on the Sinequa Enterprise Search platform (enterprise AI search engine).",
       "highlights": [
-        "New feature development and platform maintenance on the Sinequa Enterprise Search product",
-        "Fullstack Software Engineer (C#, .NET 5, TypeScript) within the 'Platform' core team handling cross-functional systems (external APIs, admin interface, log visualization)"
+        "Fullstack developer (C#, .NET 5, TypeScript) within the 'Platform' core team handling cross-functional systems",
+        "Built external APIs, enhanced administration interfaces, and log visualization systems"
       ]
     },
     {
@@ -44,11 +76,10 @@
       "endDate": "2021-05",
       "summary": "Fullstack development on enterprise SaaS expense management application (Neo Expense).",
       "highlights": [
-        "Member of an international English-speaking Scrum team (France, Romania) with developers, QA engineer, and Product Owner",
-        "Fullstack developer on the Neo Expense application (3 Scrum teams) using C#, ASP.NET Core, and Backbone.js",
+        "Fullstack developer (C#, ASP.NET Core, Backbone.js) within an international Scrum team (France, Romania)",
         "Technical lead and high-level software design point-of-contact in close collaboration with Product Management",
         "Application maintenance and bug backlog management with Customer Support, Product, and QA teams",
-        "Lead maintainer for third-party frontend and backend dependencies (security upgrades, vulnerability audits, new package approvals)",
+        "Lead maintainer for third-party frontend and backend dependencies (security upgrades, vulnerability audits)",
         "Production platform monitoring and observability using the ELK stack (Elasticsearch, Logstash, Kibana)"
       ]
     },
@@ -70,18 +101,8 @@
       "endDate": "2014-07",
       "summary": "Engineering development internship.",
       "highlights": [
-        "Developed an Excel/PDF converter tool used across construction sites (VB.NET)",
+        "Developed an Excel/PDF document converter tool used on construction sites (VB.NET)",
         "Extended an internal document storage web application (ASP.NET, HTML/CSS, JavaScript, SQL Server)"
-      ]
-    },
-    {
-      "name": "Bouygues Travaux Publics",
-      "position": "Software Developer Intern",
-      "startDate": "2013-07",
-      "endDate": "2013-08",
-      "summary": "First technical software internship.",
-      "highlights": [
-        "Developed a server monitoring and supervision application (VB.NET, SQL Server)"
       ]
     }
   ],
@@ -129,54 +150,55 @@
   ],
   "skills": [
     {
+      "name": "Management & Leadership",
+      "level": "Expert",
+      "keywords": [
+        "Engineering Management",
+        "Technical Leadership",
+        "Multi-team Management (25+ people)",
+        "Agile & Scrum at Scale",
+        "Leader Mentoring & Coaching",
+        "Product-Tech Strategic Alignment"
+      ]
+    },
+    {
       "name": "Backend & Architecture",
       "level": "Expert",
       "keywords": [
         "C#",
-        ".NET Core / .NET 5+",
+        ".NET 8 / .NET Core",
         "ASP.NET Core",
-        "LINQ",
-        "REST APIs",
-        "Distributed Systems",
+        "Microservices Architecture",
+        "High-performance REST APIs",
+        "Cloud Migration & Modernization",
         "SQL Server",
-        "MySQL",
-        "Oracle PL/SQL"
+        "PostgreSQL",
+        "LINQ"
       ]
     },
     {
       "name": "Frontend & Web",
       "level": "Advanced",
       "keywords": [
+        "Vue.js",
+        "React.js",
         "TypeScript",
         "JavaScript (ES6+)",
+        "Modern Frontend Redesign",
         "HTML5 / CSS3",
-        "Less / Sass",
-        "Node.js",
-        "npm",
-        "Backbone.js",
-        "jQuery"
+        "Node.js"
       ]
     },
     {
-      "name": "Methodologies & Quality",
+      "name": "Cloud, DevOps & Observability",
       "level": "Advanced",
       "keywords": [
-        "Agile / Scrum",
-        "TDD & Unit Testing (xUnit, Moq)",
-        "Code Reviews",
-        "Pair Programming",
-        "CI/CD"
-      ]
-    },
-    {
-      "name": "DevOps, Tools & Observability",
-      "level": "Advanced",
-      "keywords": [
-        "Git (GitHub, GitLab, GitKraken)",
-        "ELK Stack (Elasticsearch, Logstash, Kibana)",
-        "Visual Studio / Rider / VS Code",
-        "Jira",
-        "PowerShell",
+        "AWS (Amazon Web Services)",
+        "Docker",
+        "CI/CD",
+        "ELK Stack (Elasticsearch, Kibana)",
+        "Git (GitHub, GitLab)",
+        "Swagger",
         "TeamCity"
       ]
     }
