@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build:typst": "typst compile --root . typst/resume_fr.typ dist/typst/resume-fr.pdf && typst compile --root . typst/resume_en.typ dist/typst/resume-en.pdf",
-    "dev": "npx serve ."
+    "dev": "node scripts/serve.js"
   },
   "repository": {
     "type": "git",
