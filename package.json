@@ -1,0 +1,30 @@
+{
+  "name": "static-resume",
+  "version": "2.0.0",
+  "description": "Nicolas Benning's Modernized Multi-Implementation Resume (Interactive Web, Typst ATS PDF, JSON Resume)",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:typst": "typst compile --root . typst/resume_fr.typ dist/typst/resume-fr.pdf && typst compile --root . typst/resume_en.typ dist/typst/resume-en.pdf",
+    "dev": "node scripts/serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bicolt/static-resume.git"
+  },
+  "keywords": [
+    "resume",
+    "cv",
+    "jsonresume",
+    "typst",
+    "web"
+  ],
+  "author": "Nicolas Benning <nicolas.benning@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jsonresume-theme-elegant": "^1.15.1",
+    "jsonresume-theme-even": "^0.3.3",
+    "jsonresume-theme-stackoverflow": "^1.4.0",
+    "resumed": "^0.0.17"
+  }
+}
