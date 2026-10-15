@@ -101,7 +101,8 @@
       "endDate": "2014-07",
       "summary": "Engineering development internship.",
       "highlights": [
-        "Developed an Excel/PDF converter tool and enhanced document storage web applications (VB.NET, ASP.NET, SQL Server)"
+        "Developed an Excel/PDF document converter tool used on construction sites (VB.NET)",
+        "Extended an internal document storage web application (ASP.NET, HTML/CSS, JavaScript, SQL Server)"
       ]
     }
   ],
